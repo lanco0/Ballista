@@ -20,12 +20,13 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     public override void OnJoinedLobby()
     {
+        MenuManager.instance.OpenMenu("title");
         Debug.Log("Joined Lobby");
     }
 
     
     void Update()
     {
-        // You can add update logic here if needed
+        
     }
 }
