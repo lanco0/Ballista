@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using TMPro;
 
 public class Launcher : MonoBehaviourPunCallbacks
 {
@@ -24,9 +25,9 @@ public class Launcher : MonoBehaviourPunCallbacks
         Debug.Log("Joined Lobby");
     }
 
-    
-    void Update()
+    public void CreateRoom()
     {
-        
+
     }
+   
 }
