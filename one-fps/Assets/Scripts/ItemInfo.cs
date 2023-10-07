@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IthemInfo : ScriptableObject
+public class ItemInfo : ScriptableObject
 {
-    public string ithemName;
+    public string itemName;
 }

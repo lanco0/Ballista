@@ -6,18 +6,15 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] GameObject cameraHolder;
-
     [SerializeField] float mouseSensitiviy, sprintSpeed, walkSpeed, jumpForce, smoothTime;
-
-
-
+    [SerializeField] Item[] items;
+    int itemIndex;
+    int previousItemIndex = -1;
     float verticalLookRotation;
     bool grounded;
     Vector3 smoothMoveVelocity;
     Vector3 moveAmount;
-
     Rigidbody rb;
-
     PhotonView PV;
 
     private void Awake()
@@ -28,26 +25,34 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        if (!PV.IsMine)
+        if (PV.IsMine)
         {
-           Destroy(GetComponentInChildren<Camera>().gameObject);
+            EquipItem(0);
+        }
+        else
+        {
+            Destroy(GetComponentInChildren<Camera>().gameObject);
             Destroy(rb);
-
         }
     }
 
     private void Update()
     {
-
         if (!PV.IsMine)
             return;
         Look();
         Move();
-        jump();
+        Jump();
 
+        for (int i = 0; i < items.Length; i++)
+        {
+            if (Input.GetKeyDown((i + 1).ToString()))
+            {
+                EquipItem(i);
+                break;
+            }
+        }
     }
-
-
 
     void Look()
     {
@@ -58,35 +63,40 @@ public class PlayerController : MonoBehaviour
         cameraHolder.transform.localEulerAngles = Vector3.left * verticalLookRotation;
     }
 
-
-  
-
-
-
     void Move()
     {
         Vector3 moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
-
         moveAmount = Vector3.SmoothDamp(moveAmount, moveDir * (Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : walkSpeed), ref smoothMoveVelocity, smoothTime);
     }
 
-
-    void jump()
+    void Jump()
     {
-
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
             rb.AddForce(transform.up * jumpForce);
         }
     }
 
+    void EquipItem(int _index)
+    {
+        if (_index == previousItemIndex)
+            return;
 
+        itemIndex = _index;
+
+        for (int i = 0; i < items.Length; i++)
+        {
+            items[i].itemGameObject.SetActive(false);
+        }
+
+        items[itemIndex].itemGameObject.SetActive(true);
+        previousItemIndex = itemIndex;
+    }
 
     public void SetGroundedState(bool _grounded)
     {
         grounded = _grounded;
     }
-
 
     private void FixedUpdate()
     {
@@ -95,7 +105,4 @@ public class PlayerController : MonoBehaviour
 
         rb.MovePosition(rb.position + transform.TransformDirection(moveAmount) * Time.fixedDeltaTime);
     }
-
-
-
 }

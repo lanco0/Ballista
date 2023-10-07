@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 1863560317250881103}
   - component: {fileID: 4308193943551516615}
   m_Layer: 0
-  m_Name: 'Gun2Ithem '
+  m_Name: 'Gun2Item '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1863560317250881103
 Transform:
   m_ObjectHideFlags: 0
@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d2482776983824419d8172d98f93aac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Info: {fileID: 11400000, guid: adeee3563c221c4419a4352c63bcd106, type: 2}
-  IthemGameObject: {fileID: 308322772814457572}
+  itemInfo: {fileID: 0}
+  itemGameObject: {fileID: 0}
 --- !u!1 &308322772814457572
 GameObject:
   m_ObjectHideFlags: 0
@@ -56,13 +56,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5654416363354202396}
+  - component: {fileID: 8424705048150236235}
   m_Layer: 0
   m_Name: Gun2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5654416363354202396
 Transform:
   m_ObjectHideFlags: 0
@@ -79,6 +80,20 @@ Transform:
   - {fileID: 1830672850361579411}
   m_Father: {fileID: 1863560317250881103}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8424705048150236235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 308322772814457572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d2482776983824419d8172d98f93aac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemInfo: {fileID: 0}
+  itemGameObject: {fileID: 0}
 --- !u!1 &3060690022864465372
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,6 +103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2717229236484326313}
+  - component: {fileID: 9161741499640489910}
   m_Layer: 0
   m_Name: Gun1
   m_TagString: Untagged
@@ -111,6 +127,20 @@ Transform:
   - {fileID: 2916629620313041521}
   m_Father: {fileID: 5067895294958553254}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9161741499640489910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3060690022864465372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d2482776983824419d8172d98f93aac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemInfo: {fileID: 0}
+  itemGameObject: {fileID: 0}
 --- !u!1 &3989928269711804505
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,6 +315,9 @@ MonoBehaviour:
   walkSpeed: 3
   jumpForce: 300
   smoothTime: 0.15
+  items:
+  - {fileID: 1623696922444541925}
+  - {fileID: 4308193943551516615}
 --- !u!114 &566426572854842361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,7 +352,7 @@ GameObject:
   - component: {fileID: 5067895294958553254}
   - component: {fileID: 1623696922444541925}
   m_Layer: 0
-  m_Name: Gun1Ithem
+  m_Name: Gun1Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -353,8 +386,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d2482776983824419d8172d98f93aac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Info: {fileID: 11400000, guid: ccd5792b3eb687541a995f421fd015cc, type: 2}
-  IthemGameObject: {fileID: 3060690022864465372}
+  itemInfo: {fileID: 0}
+  itemGameObject: {fileID: 0}
 --- !u!1 &4871761917338416264
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,7 +490,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1960452036083235430}
   m_Layer: 0
-  m_Name: IthemHolder
+  m_Name: ItemHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -491,7 +524,6 @@ GameObject:
   - component: {fileID: 1830672850361579411}
   - component: {fileID: 6943582997602275063}
   - component: {fileID: 4547768584259432305}
-  - component: {fileID: 3265609672644367577}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -564,27 +596,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3265609672644367577
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5356863868651911089}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6762598439162078925
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,7 +607,6 @@ GameObject:
   - component: {fileID: 2916629620313041521}
   - component: {fileID: 6771015314788258928}
   - component: {fileID: 695913902691759847}
-  - component: {fileID: 213811025037558596}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -669,27 +679,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &213811025037558596
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6762598439162078925}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8020004305710747248
 GameObject:
   m_ObjectHideFlags: 0
