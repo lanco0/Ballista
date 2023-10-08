@@ -383,7 +383,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 17142afb8f71fd941bbd5d6bd061c275, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -610,7 +610,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &5341621851399822937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1123,7 +1123,6 @@ GameObject:
   - component: {fileID: 661285188742022458}
   - component: {fileID: 6732414030161505931}
   - component: {fileID: 2675163236868231600}
-  - component: {fileID: 2847997626405686919}
   m_Layer: 0
   m_Name: Rifle
   m_TagString: Untagged
@@ -1185,18 +1184,6 @@ MonoBehaviour:
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &2847997626405686919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6444605041853771924}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7756d7fbf92c5bf41bdd628bfd22b717, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8227353499824922674
 GameObject:
   m_ObjectHideFlags: 0
@@ -1223,8 +1210,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8227353499824922674}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1.04, y: 0.39, z: -0.16}
+  m_LocalScale: {x: 0.72, y: 0.22, z: 0.79}
   m_Children: []
   m_Father: {fileID: 3218887557126065164}
   m_RootOrder: 0
