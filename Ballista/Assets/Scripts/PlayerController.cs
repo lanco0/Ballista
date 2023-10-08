@@ -53,8 +53,12 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 			Destroy(GetComponentInChildren<Camera>().gameObject);
 			Destroy(rb);
 			Destroy(ui);
+
 		}
-	}
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
 
 	void Update()
 	{
