@@ -42,6 +42,8 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 		playerManager = PhotonView.Find((int)PV.InstantiationData[0]).GetComponent<PlayerManager>();
 	}
 
+
+
 	void Start()
 	{
 		if(PV.IsMine)
@@ -54,7 +56,10 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 			Destroy(rb);
 			Destroy(ui);
 		}
-	}
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
 
 	void Update()
 	{
