@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Rifle
   damage: 45
+  gunshotSound: {fileID: 8300000, guid: bd83c36222ec1c0448601661f1573860, type: 3}
